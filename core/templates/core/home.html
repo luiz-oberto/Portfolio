@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Portfólio do Luiz{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="text-center mb-5">
+    <h1 class="display-4">Olá, eu sou o Luiz!</h1>
+    <p class="lead">Bem-vindo ao meu portfólio interativo.</p>
+    <hr>
+    <p>Aqui você pode explorar projetos com Python, automação, segurança e muito mais.</p>
+  </div>
+
+  <h2 class="mb-4 text-center">Experimente meus projetos</h2>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">CRUD Interativo</h5>
+          <p class="card-text">Cadastre, edite e visualize dados em tempo real.</p>
+          <a href="/crud/" class="btn btn-primary">Explorar</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">Controle de Estoque</h5>
+          <p class="card-text">Simule entradas e saídas de produtos com filtros inteligentes.</p>
+          <a href="/estoque/" class="btn btn-primary">Explorar</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">Docker</h5>
+          <p class="card-text">Visualização de containers e estrutura do docker-compose.</p>
+          <a href="/docker/" class="btn btn-primary">Explorar</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">Segurança Web</h5>
+          <p class="card-text">Veja exemplos de segurança aplicada e simulações de ataques.</p>
+          <a href="/seguranca/" class="btn btn-primary">Explorar</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">Chatbot com IA</h5>
+          <p class="card-text">Mini chatbot integrado com OpenAI.</p>
+          <a href="/ia/" class="btn btn-primary">Explorar</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">Scripts PowerShell</h5>
+          <p class="card-text">Automatizações com scripts para Windows.</p>
+          <a href="/scripts/" class="btn btn-primary">Explorar</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">Simulador de Fila</h5>
+          <p class="card-text">Visualização da estrutura de dados Fila em tempo real.</p>
+          <a href="/fila/" class="btn btn-primary">Explorar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
