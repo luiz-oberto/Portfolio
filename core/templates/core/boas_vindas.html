@@ -1,0 +1,18 @@
+<!-- templates/core/boas_vindas.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container text-center mt-5">
+  <h2>🦉 Olá! Eu sou a Corujinha assistente do Luiz Oberto!</h2>
+  <h3>Posso ser seu guia neste portfolio?</h3>
+  <h5>Para começarmos poderia me informar seu nome?</h5>
+  <form method="post">
+    {% csrf_token %}
+    <div class="col-md-4 offset-md-4">
+      {{ form.as_p }}
+      <button class="btn btn-primary" type="submit">Começar</button>
+    </div>
+  </form>
+  <p>Caso prefira seguir por conta própria você pode seguir para a página principal clicando <a href='{% url "home" %}'>aqui</a></p>
+</div>
+{% endblock %}
