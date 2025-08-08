@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="container mt-5">
+  <h2>🔢 CRUD Interativo</h2>
+  <p>CRUD é o acrônimo para as operações básicas em um sistema de dados:</p>
+  <ul>
+    <li><strong>C</strong> - Create (Criar)</li>
+    <li><strong>R</strong> - Read (Ler)</li>
+    <li><strong>U</strong> - Update (Atualizar)</li>
+    <li><strong>D</strong> - Delete (Excluir)</li>
+  </ul>
+  <p>Abaixo, você pode interagir com um pequeno sistema de cadastro onde é possível adicionar, visualizar, editar e excluir registros simples.</p>
+</section>
+
+<div class="container mt-4">
+  <h3>Registros</h3>
+  <a href="{% url 'criar_registro' %}" class="btn btn-success mb-3">Novo Registro</a>
+  <table class="table table-striped">
+    <thead>
+      <tr><th>Nome</th><th>Email</th><th>Ações</th></tr>
+    </thead>
+    <tbody>
+      {% for r in registros %}
+      <tr>
+        <td>{{ r.nome }}</td>
+        <td>{{ r.email }}</td>
+        <td>
+          <a href="{% url 'editar_registro' r.id %}" class="btn btn-sm btn-warning">Editar</a>
+          <a href="{% url 'excluir_registro' r.id %}" class="btn btn-sm btn-danger">Excluir</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <nav>
+    <ul class="pagination">
+      {% if registros.has_previous %}
+        <li class="page-item"><a class="page-link" href="?page={{ registros.previous_page_number }}">Anterior</a></li>
+      {% endif %}
+      <li class="page-item active"><a class="page-link">{{ registros.number }}</a></li>
+      {% if registros.has_next %}
+        <li class="page-item"><a class="page-link" href="?page={{ registros.next_page_number }}">Próxima</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+</div>
+{% endblock %}

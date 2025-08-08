@@ -18,7 +18,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/home/">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="/crud/">CRUD</a></li>
             <li class="nav-item"><a class="nav-link" href="/estoque/">Estoque</a></li>
             <li class="nav-item"><a class="nav-link" href="/docker/">Docker</a></li>
@@ -27,16 +27,17 @@
             <li class="nav-item"><a class="nav-link" href="/scripts/">Scripts</a></li>
             <li class="nav-item"><a class="nav-link" href="/fila/">Fila</a></li>
             <li class="nav-item"><a class="nav-link" href="/sobre/">Sobre</a></li>
-            {% if request.session.visitante_id %}
-              <div class="text-end me-3 mt-2">
-                <small class="text-muted">Visitante: {{ visitante.nome }}</small>
-                <a href="{% url 'sair_visitante' %}" class="btn btn-sm btn-outline-danger ms-2">Sair</a>
-              </div>
-            {% else %}
-            
-            {% endif %}
           </ul>
         </div>
+        
+        {% if request.session.visitante_id %}
+          <div class="text-end me-3 mt-2">
+            <small class="text-muted">Visitante: {{ visitante.nome }}</small>
+            <a href="{% url 'sair_visitante' %}" class="btn btn-sm btn-outline-danger ms-2">Sair</a>
+          </div>
+        {% else %}
+        
+        {% endif %}
       </div>
     </nav>
   </header>
